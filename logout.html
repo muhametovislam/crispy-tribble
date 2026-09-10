@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RAID LOG — Выход</title>
+  <style>
+    body{background:#060a06;color:#c8d8c0;font-family:"Courier New",Courier,monospace;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0}
+    .box{background:#0f160f;border:1px solid #1e2e1e;padding:26px;text-align:center;border-radius:6px}
+    .muted{color:#7a967a;margin-top:8px;font-size:13px}
+    a.btn{display:inline-block;margin-top:12px;padding:8px 12px;border:1px solid #2e6b31;color:#76ff7a;text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div style="font-size:18px;font-weight:700;color:#c8d8c0">Выход...</div>
+    <div class="muted">Сеанс будет завершён, через секунду вы будете перенаправлены на страницу входа.</div>
+    <a class="btn" href="login.html">Если не произошло — к странице входа</a>
+  </div>
+  <script>
+    // Выполняем выход: очищаем ключ авторизации и редирект
+    try{localStorage.removeItem('rl_auth');}catch(e){}
+    setTimeout(function(){window.location.href='login.html';},700);
+  </script>
+</body>
+</html>
